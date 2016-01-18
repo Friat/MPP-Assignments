@@ -12,7 +12,7 @@ public class Order {
     
     
     public Order(String order_no, boolean prepaid, double order_price, Date order_date, String status) {
-		super();
+		
 		this.order_no = order_no;
 		this.prepaid = prepaid;
 		this.order_price = order_price;
