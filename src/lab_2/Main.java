@@ -36,11 +36,17 @@ public class Main {
     }
 
 
-	public static void main(String[] args) throws ParseException, IOException {
+	public static void main(String[] args) throws ParseException, IOException
+	{
 		Department dept = new Department("Computer Science");
 		
 		SimpleDateFormat startDate = new SimpleDateFormat("MM-DD-YYYY"); // Date
-				
+			
+		// Testing interface
+		
+		System.out.println("Static method test: " + IPerson.myStatic());
+		IPerson test = new Staff("Frank Gore","472-3321",33,4050);
+		System.out.println("Default method test:" + test.myDefault());
 		
 		// Create faculty objects
 		

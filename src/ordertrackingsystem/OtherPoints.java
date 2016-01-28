@@ -1,10 +1,16 @@
 package ordertrackingsystem;
 
-public class OtherPoints {
+public class OtherPoints extends ACompPoints{
 
-    private double point;
+    private double points;
 	
+    
+	public OtherPoints(double points) {
+		
+		this.points = points;
+	}
+
 	public double getPoints(){
-		return 0;
+		return points;
 	}
 }

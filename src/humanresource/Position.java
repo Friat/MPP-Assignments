@@ -1,4 +1,4 @@
-package lab_3;
+package humanresource;
 
 import java.util.ArrayList;
 
@@ -66,6 +66,13 @@ public class Position
 		
 	}
 	
+	public String toString()
+	{
+		return ("Employee Detail:== \n" + this.empObj +
+			   "Employee Position Title: " +
+	           this.title +", "+ "Title Description: "+
+			   this.description);
+	}
 	public void print()
 	{
 		System.out.println("Employee Position Title: " +this.title +", "+ "Title Description: "+ this.description);
@@ -93,6 +100,18 @@ public class Position
 		}
 	}
 	
+	public boolean equals(Object pos)
+	{
+		if(pos == null) return false;
+		if(!(pos instanceof Position)) return false;
+		Position p = (Position)pos;
+		if(this.empObj.equals(p.empObj) && this.title.equals(p.title) && this.description.equals(p.description))
+		{
+			return true;
+		}
+		else
+		return false;
+	}
 	public boolean isManager()
 	{
 		return true;

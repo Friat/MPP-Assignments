@@ -1,5 +1,6 @@
 package ordertrackingsystem;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Order {
@@ -9,20 +10,28 @@ public class Order {
     private double order_price;
     private Date order_date;
     private String status;
+    private ArrayList<OrderLine> orderlines;
     
     
-    public Order(String order_no, boolean prepaid, double order_price, Date order_date, String status) {
+    public Order(String order_no, boolean prepaid, double order_price, Date order_date, String status)
+    {
 		
 		this.order_no = order_no;
 		this.prepaid = prepaid;
 		this.order_price = order_price;
 		this.order_date = order_date;
 		this.status = status;
+		orderlines = new ArrayList<OrderLine>();
 	}
 
 	public double getTotalPrice()
     {
-    	return 0;
+    	for(OrderLine ol: orderlines)
+    	{
+    		this.order_price = this.order_price + ol.computePrice();
+    		
+    	}
+    	return this.order_price;
     }
     
     public double getPrepaid()

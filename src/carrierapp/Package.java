@@ -19,6 +19,7 @@ public abstract class Package {
 
 	protected abstract double cost();
 	
+	
 	public String getDescription() {
 		return description;
 	}

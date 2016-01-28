@@ -1,4 +1,4 @@
-package lab_3;
+package humanresource;
 
 import java.util.ArrayList;
 
@@ -71,9 +71,18 @@ public class Department
 	return this.dept_Head_Pos;	
 	}
 	
+	public String toString()
+	{
+		return ("Department Name: =>"+ this.name+", "+
+	            "Location => "+ this.location + ", "+
+				"Company Name => " + this.compObj.getName());
+	}
+	
 	public void print()
 	{
-	    System.out.println("Department Name: =>"+ this.name+", "+ "Location => "+ this.location + ", "+"Company Name => " + this.compObj.getName());
+	    System.out.println("Department Name: =>"+ this.name+", "+ 
+	                       "Location => "+ this.location + ", " +
+	    		           "Company Name => " + this.compObj.getName());
 	    
 	    for(Position p : this.positionList)
 	    {
@@ -90,16 +99,33 @@ public class Department
 	    }
 		return sum;
 	}
-	
+
 	public void printReportingHierarchy()
 	{
 		Position deptHeadPosition = this.getdept_Head();
-		System.out.println(deptHeadPosition.getTitle());
+		System.out.println("Department Head: "+deptHeadPosition.getEmpObj().getEmpFirstName()+","+ " Position: "+deptHeadPosition.getTitle());
 		
-		//for(Position p: this.)
-		//{
+	    for(Position p: deptHeadPosition.getInferiors())
+		{
+	    	System.out.println("====>"+p.getEmpObj().getEmpFirstName()+ " ");
+	    	System.out.print(p.getEmpObj().getEmpMiddleInitial()+ " ");
+	    	System.out.print(p.getEmpObj().getEmpLastName()+ " ");
+	    	//System.out.println(p.getEmpObj().);
+	    	
+			p.printDownLine();
+		}
+	}
+	
+	public boolean equals(Object dept)
+	{
+		if(dept == null) return false;
+		if(this.getClass() != dept.getClass())return false;
+		Department d = (Department)dept;
+		if(this.name.equals(d.name)&& this.location.equals(d.location) && this.compObj.equals(d.compObj))
+			return true;
+		else
 			
-		//}
+		return false;
 	}
 	
 	

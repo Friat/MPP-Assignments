@@ -1,4 +1,4 @@
-package lab_3;
+package humanresource;
 
 import java.util.ArrayList;
 
@@ -71,7 +71,9 @@ public class Company
 		
 			Position top_executive = this.gettopExecutive();
 			Employee emp = top_executive.getEmpObj();
-			System.out.println("Top Executive => "+"Name : "+emp.getEmpFirstName() + "Middle Name : "+ emp.getEmpMiddleInitial()+ "Last Name"+ emp.getEmpLastName() );
+			System.out.println("Top Executive => "+"Name : "+emp.getEmpFirstName() 
+			+ "Middle Name : "+ emp.getEmpMiddleInitial()+ 
+			"Last Name"+ emp.getEmpLastName() );
 		    
 			for(Department d : this.deptList)
 			{

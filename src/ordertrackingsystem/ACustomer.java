@@ -1,16 +1,21 @@
 package ordertrackingsystem;
 
-public class ACustomer {
+import java.util.ArrayList;
+
+public abstract class ACustomer {
 
 	protected String name;
 	protected String address;
 	protected String phone_no;
 	protected double points;
-	protected double getCreditRating;
+	protected ArrayList<Order> orders;
+	
+	protected abstract double getCreditRating();
 	
 	
-	public ACustomer(String name, String address, String phone_no, double points) {
-		super();
+	public ACustomer(String name, String address, String phone_no, double points) 
+	{
+		
 		this.name = name;
 		this.address = address;
 		this.phone_no = phone_no;
@@ -18,8 +23,5 @@ public class ACustomer {
 	}
 
 
-	public double getCreditRating()
-	{
-		return this.getCreditRating;
-	}
+	
 }

@@ -1,10 +1,14 @@
 package ordertrackingsystem;
 
-public class HealthPoints {
+public class HealthPoints extends ACompPoints {
 
-     private double point;
+     private double points;
 	
+     public HealthPoints(double points)
+     {
+    	 this.points = points;
+     }     
 	 public double getPoints(){
-		return 0;
+		return points;
 	}
 }

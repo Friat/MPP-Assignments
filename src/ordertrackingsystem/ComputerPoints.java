@@ -2,9 +2,16 @@ package ordertrackingsystem;
 
 public class ComputerPoints extends ACompPoints {
 
-	private double point;
+	private double points;
 	
+	
+	public ComputerPoints(double points) 
+	{
+		this.points = points;
+	}
+
+
 	public double getPoints(){
-		return 0;
+		return points;
 	}
 }

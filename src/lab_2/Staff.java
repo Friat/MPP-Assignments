@@ -1,6 +1,6 @@
 package lab_2;
 
-class Staff extends Person
+class Staff extends Person implements IPerson
 {
 	private double salary;
 	
@@ -18,6 +18,9 @@ class Staff extends Person
 		this.salary = salary;
 	}
 	
-
+	public void myAbstract()
+	{
+		System.out.println("From Abstract Method:");
+	}
 	
 }

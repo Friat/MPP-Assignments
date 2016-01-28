@@ -1,10 +1,17 @@
 package ordertrackingsystem;
 
-public class Audio_VdeoPoints {
+public class Audio_VdeoPoints extends ACompPoints{
 
-     private double point;
+     private double points;
 	
-	 public double getPoints(){
-		return 0;
-	}
+     public Audio_VdeoPoints(double points)
+     {
+		this.points = points;
+	 }
+
+	public double getPoints()
+     {
+    	return points; 
+     }
+     
 }
