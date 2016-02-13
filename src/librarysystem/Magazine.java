@@ -1,24 +1,15 @@
 package librarysystem;
 
-import java.util.ArrayList;
-
 public class Magazine extends Item {
 
 	private int limit;
-	private String issue_No;
-	private boolean available;
-	
-	public Magazine(String title, boolean available,int limit, String issue_No) {
-		
-		super( title,available);
+	private int issue;
+
+	public Magazine(String title, boolean available, int limit, int issue) {
+		super(title, available);
 		this.limit = limit;
-		this.issue_No = issue_No;
-		this.available = available;
+		this.issue = issue;
+		// TODO Auto-generated constructor stub
 	}
 
-    public boolean checkAvailability()
-	{
-		return this.available;
-	}
-	
 }

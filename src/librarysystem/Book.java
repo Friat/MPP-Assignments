@@ -2,26 +2,22 @@ package librarysystem;
 
 import java.util.ArrayList;
 
-public class Book extends Item{
+public class Book extends Item {
 
 	private String ISBN;
 	private ArrayList<String> authorList;
 	private int limit;
-    //private boolean available;
-    
-    public Book(String title, boolean available, String iSBN, ArrayList<String> authorList, int limit) {
-		
-    	super(title, available);
-		ISBN = iSBN;
-		this.authorList = new ArrayList<String>();
+
+	public Book(String title, boolean available, String isbn, int limit) {
+		super(title, available);
+		this.ISBN = isbn;
 		this.limit = limit;
-		//this.available = available;
+		// TODO Auto-generated constructor stub
+		authorList = new ArrayList<String>();
 	}
 
-
-
-	public boolean checkAvailability()
-	{
-		return this.available;
+	public void addAuthor(String author) {
+		authorList.add(author);
 	}
+
 }

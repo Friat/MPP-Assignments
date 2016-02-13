@@ -64,6 +64,24 @@ public class Main
 		System.out.println("Position Detail: "+ pos9);
 		System.out.println("Department Detail: "+ sales);
 		
+		System.out.println();
+		System.out.println("Testing clone of position object: ");
+		System.out.println();	
+		System.out.println("Detail of position before clone:");
+		System.out.println("===============================================================================");
+		System.out.println(Dept_head1);
+		try {
+			Position pos = (Position)Dept_head1.clone();
+			System.out.println();
+			System.out.println("Detail of Position after clone:");
+			System.out.println("===============================================================================");
+			System.out.println( pos);
+		} catch (CloneNotSupportedException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
 		// adding positions to each departments.
 		
 		sales.addPosition(Dept_head1);

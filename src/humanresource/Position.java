@@ -2,7 +2,7 @@ package humanresource;
 
 import java.util.ArrayList;
 
-public class Position 
+public class Position implements Cloneable
 {
 	private String title;
 	private String description;
@@ -100,6 +100,22 @@ public class Position
 		}
 	}
 	
+	@Override
+	public int hashCode()
+    {
+    	int hash = 5;
+    	int hash_Title = this.title.hashCode();
+    	int hash_Desc = this.description.hashCode();
+    	int hash_EmpObj = this.empObj.hashCode();
+    	    	
+    	hash += hash * 31 + hash_Title;
+    	hash += hash * 31 + hash_Desc;
+    	hash += hash * 31 + hash_EmpObj;
+    	    	
+    	return hash;
+    	  }
+	
+	@Override
 	public boolean equals(Object pos)
 	{
 		if(pos == null) return false;
@@ -112,6 +128,15 @@ public class Position
 		else
 		return false;
 	}
+	// Overriding clone method
+	@Override
+	protected Object clone() throws CloneNotSupportedException
+	{
+		Position cloned_pos = (Position)super.clone();
+		cloned_pos.empObj = (Employee)this.empObj.clone();
+		return cloned_pos;
+	}
+	
 	public boolean isManager()
 	{
 		return true;

@@ -2,7 +2,7 @@ package humanresource;
 
 import java.util.Date;
 
-public class Employee
+public class Employee implements Cloneable
 {
 	private String empID;
 	private String empFirstName;
@@ -11,7 +11,7 @@ public class Employee
 	private Date empBD;
 	private String SSN;
 	private double salary;
-	//private Position empPosition;
+	private Position empPosition; 
 	
     public Employee(String empID, String empFirstName, String empMiddleInitial, String empLastName, Date empBD, String SSN, double salary)
     {
@@ -96,7 +96,7 @@ public class Employee
     
 	public String toString()
 	{
-		String str = ("Employee Detail: "+ "Employee ID => "+
+		String str = ( "Employee ID => "+
 					 this.empID +", "+ "Employee First Name => " +
 				     this.empFirstName +", "+ "Employee Middle Name => "+
 					 this.empMiddleInitial +"," + "Employee Last Name" +
@@ -136,6 +136,9 @@ public class Employee
     	return false; 
     }
     
+    // Overridding Hashcode
+    
+    @Override
     public int hashCode()
     {
     	int hash = 5;
@@ -152,15 +155,21 @@ public class Employee
     	hash += hash * 31 + hash_SSN;
     	
     	return hash;
-    	//return Object.hash(empFirstName,empMiddleInitial,empLastName, SSN, empBD );
+    	  }
+    
+    // Overriding clone
+    
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+    	Employee cloned_emp = (Employee)super.clone();
+    	//cloned_emp.empPosition = (Position)this.empPosition.clone();
     	
-        /*hash = 11 * hash + empFirstName.hashCode() * 
-    			empLastName.hashCode() * empID.hashCode()
-    			* empMiddleInitial.hashCode() * SSN.hashCode() * empBD.hashCode();
-    	
-    	return hash;
-   */
+    	return cloned_emp;
     }
+    
+    
+    
     
 	
     }

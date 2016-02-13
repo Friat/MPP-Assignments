@@ -6,24 +6,23 @@ public class Item {
 
 	protected String title;
 	protected boolean available;
-	protected ArrayList<ItemCopy> itemcopy;
-	protected ArrayList<Reservation> reservations;
-	
-	
-	public Item(String title, boolean available)
-	{
-		
+	protected ArrayList<ItemCopy> itemCopy;
+
+	public Item(String title, boolean available) {
+
 		this.title = title;
 		this.available = available;
-		this.itemcopy = new ArrayList<ItemCopy>();
-		this.reservations = new ArrayList<Reservation>();
+		itemCopy = new ArrayList<ItemCopy>();
 	}
 
+	public boolean checkAvailability() {
 
-	public boolean checkAvailability()
-	{
 		return this.available;
 	}
 
-	
+	public void addItemCopy(ItemCopy copy) {
+
+		itemCopy.add(copy);
+	}
+
 }

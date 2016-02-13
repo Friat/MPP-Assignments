@@ -4,20 +4,17 @@ import java.util.Date;
 
 public class Reservation {
 
-	private Date reservation_Date;	
-    //private boolean available;
-    private Item item;
-	
-    public Reservation(Date reservation_Date, Item item) {
-		
-    	this.reservation_Date = reservation_Date;
-		//this.available = available;
+	private Date reservationDate;
+	private Item item;
+
+	public Reservation(Date reservationDate, Item item) {
+
+		this.reservationDate = reservationDate;
 		this.item = item;
 	}
 
-
-	public boolean checkAvailability()
-	{
+	public boolean checkAvailability(Item item) {
 		return item.checkAvailability();
 	}
+
 }
